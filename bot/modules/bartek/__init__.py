@@ -11,6 +11,8 @@ from ...bot import DegeneratBot
 
 PATH = "data/polityka/"
 
+TEST = "BTH"
+
 
 class Bartek(commands.Cog):
     def __init__(
