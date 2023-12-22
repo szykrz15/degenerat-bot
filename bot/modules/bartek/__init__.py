@@ -5,9 +5,9 @@ from datetime import date
 import discord
 from discord.ext import commands
 
-from ..bot import DegeneratBot
+from ...bot import DegeneratBot
 
-PATH = "data/polityka/"
+PATH: str = "data/polityka/"
 
 
 class Bartek(commands.Cog):
@@ -17,12 +17,12 @@ class Bartek(commands.Cog):
         self.bot: DegeneratBot = bot
         self.log: logging.Logger = log
 
-        self.guild_id = guild_id
-        self.user_id = user_id
+        self.guild_id: int = guild_id
+        self.user_id: int = user_id
 
-        self.bartek_count = 0
+        self.bartek_count: int = 0
         self.blacklist: set[str] = set()
-        self.previous_date = date.today()
+        self.previous_date: date = date.today()
 
         for file in os.listdir(PATH):
             with open(PATH + file, "r") as f:
